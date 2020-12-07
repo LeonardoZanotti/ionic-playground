@@ -1,0 +1,29 @@
+{
+  "generator-ngx-rocket": {
+    "version": "9.1.0",
+    "props": {
+      "location": "path",
+      "strict": false,
+      "skipInstall": false,
+      "skipQuickstart": false,
+      "initGit": true,
+      "usePrefix": true,
+      "appName": "Ionic playground",
+      "target": ["web"],
+      "pwa": true,
+      "ui": "ionic",
+      "layout": "side-menu",
+      "auth": true,
+      "lazy": true,
+      "angulartics": false,
+      "languages": ["en-US", "es-ES"],
+      "tools": ["prettier", "hads", "jest"],
+      "utility": ["lodash", "moment"],
+      "deploy": "github",
+      "projectName": "ionic-playground",
+      "packageManager": "npm",
+      "mobile": [],
+      "desktop": []
+    }
+  }
+}
