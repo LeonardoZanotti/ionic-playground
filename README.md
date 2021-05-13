@@ -1,4 +1,4 @@
-# Ionic playground
+# ionic playground
 
 This project was generated with [ngX-Rocket](https://github.com/ngx-rocket/generator-ngx-rocket/)
 version 9.1.0
@@ -20,7 +20,8 @@ npm start
 # Project structure
 
 ```
-dist/                        web app production build
+www/                         web app production build
+dist/                        mobile app production build
 docs/                        project docs and coding guides
 e2e/                         end-to-end tests
 src/                         project source code
@@ -39,7 +40,9 @@ src/                         project source code
 |- main.scss                 global style entry point
 |- main.ts                   app entry point
 |- polyfills.ts              polyfills needed by Angular
-+- setup-jest.ts             unit tests entry point
++- test.ts                   unit tests entry point
+platforms/                   Cordova platform-specific projects
+plugins/                     Cordova plugins
 reports/                     test and coverage reports
 proxy.conf.js                backend proxy configuration
 ```
@@ -48,18 +51,22 @@ proxy.conf.js                backend proxy configuration
 
 Task automation is based on [NPM scripts](https://docs.npmjs.com/misc/scripts).
 
-| Task                                            | Description                                                                                                      |
-| ----------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| `npm start`                                     | Run development server on `http://localhost:4200/`                                                               |
-| `npm run serve:sw`                              | Run test server on `http://localhost:4200/` with service worker enabled                                          |
-| `npm run build [-- --configuration=production]` | Lint code and build web app for production (with [AOT](https://angular.io/guide/aot-compiler)) in `dist/` folder |
-| `npm test`                                      | Run unit tests via [Karma](https://karma-runner.github.io) in watch mode                                         |
-| `npm run test:ci`                               | Lint code and run unit tests once for continuous integration                                                     |
-| `npm run e2e`                                   | Run e2e tests using [Protractor](http://www.protractortest.org)                                                  |
-| `npm run lint`                                  | Lint code                                                                                                        |
-| `npm run translations:extract`                  | Extract strings from code and templates to `src/app/translations/template.json`                                  |
-| `npm run docs`                                  | Display project documentation and coding guides                                                                  |
-| `npm run prettier`                              | Automatically format all `.ts`, `.js` & `.scss` files                                                            |
+| Task                                                    | Description                                                                                                     |
+| ------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| `npm start`                                             | Run development server on `http://localhost:4200/`                                                              |
+| `npm run serve:sw`                                      | Run test server on `http://localhost:4200/` with service worker enabled                                         |
+| `npm run build [-- --configuration=production]`         | Lint code and build web app for production (with [AOT](https://angular.io/guide/aot-compiler)) in `www/` folder |
+| `npm run cordova:prepare`                               | Prepare for building mobile app (restore Cordova platforms and plugins)                                         |
+| `npm run cordova:run <ios/android> [--device]`          | Run app on target platform device or simulator                                                                  |
+| `npm run cordova:build [-- --configuration=production]` | Build mobile app for production in `dist/` folder                                                               |
+| `npm run cordova:clean`                                 | Removes `www/`, `platforms/` and `plugins/` folders                                                             |
+| `npm test`                                              | Run unit tests via [Karma](https://karma-runner.github.io) in watch mode                                        |
+| `npm run test:ci`                                       | Lint code and run unit tests once for continuous integration                                                    |
+| `npm run e2e`                                           | Run e2e tests using [Protractor](http://www.protractortest.org)                                                 |
+| `npm run lint`                                          | Lint code                                                                                                       |
+| `npm run translations:extract`                          | Extract strings from code and templates to `src/app/translations/template.json`                                 |
+| `npm run docs`                                          | Display project documentation and coding guides                                                                 |
+| `npm run prettier`                                      | Automatically format all `.ts`, `.js` & `.scss` files                                                           |
 
 When building the application, you can specify the target configuration using the additional flag
 `--configuration <name>` (do not forget to prepend `--` to pass arguments to npm scripts).

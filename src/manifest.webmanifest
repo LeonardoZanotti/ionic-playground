@@ -1,6 +1,6 @@
 {
-  "name": "Ionic playground",
-  "short_name": "Ionic playground",
+  "name": "ionic playground",
+  "short_name": "ionic playground",
   "theme_color": "#488aff",
   "background_color": "#488aff",
   "display": "standalone",

@@ -1,5 +1,5 @@
 import { TestBed } from '@angular/core/testing';
-import { Router, ActivatedRouteSnapshot } from '@angular/router';
+import { Router, RouterStateSnapshot, ActivatedRouteSnapshot } from '@angular/router';
 
 import { CredentialsService } from './credentials.service';
 import { MockCredentialsService } from './credentials.service.mock';
@@ -9,15 +9,13 @@ describe('AuthenticationGuard', () => {
   let authenticationGuard: AuthenticationGuard;
   let credentialsService: MockCredentialsService;
   let mockRouter: any;
-  let mockSnapshot: any;
+  let mockSnapshot: RouterStateSnapshot;
 
   beforeEach(() => {
     mockRouter = {
-      navigate: jest.fn(),
+      navigate: jasmine.createSpy('navigate'),
     };
-    mockSnapshot = jest.fn(() => ({
-      toString: jest.fn(),
-    }));
+    mockSnapshot = jasmine.createSpyObj<RouterStateSnapshot>('RouterStateSnapshot', ['toString']);
 
     TestBed.configureTestingModule({
       providers: [

@@ -1,4 +1,4 @@
-# Ionic playground
+# ionic playground
 
 Welcome to the project documentation!
 
