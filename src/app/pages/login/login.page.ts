@@ -26,7 +26,7 @@ export class LoginPage implements OnInit {
     this.credentials = this.fb.group({
       email: [reqresEmail, [Validators.required, Validators.email]],
       password: [reqresPassword, [Validators.required, Validators.minLength(6)]]
-    })
+    });
   }
 
   async login() {
@@ -36,7 +36,7 @@ export class LoginPage implements OnInit {
     this.authenticationService.login(this.credentials.value).subscribe(
       async (res) => {
         await loading.dismiss();
-        this.router.navigateByUrl('tabs', { replaceUrl: true });
+        this.router.navigateByUrl('/tabs', { replaceUrl: true });
       },
       async (err) => {
         await loading.dismiss();
