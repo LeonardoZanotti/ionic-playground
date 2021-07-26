@@ -3,6 +3,12 @@
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "./",
+    "paths": {
+      "@services/*": ["src/app/services/*"],
+      "@pages/*": ["src/app/pages/*"],
+      "@guards/*": ["src/app/guards/*"],
+      "@environments/*": ["src/environments/*"]
+    },
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,

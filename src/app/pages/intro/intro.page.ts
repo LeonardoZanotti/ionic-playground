@@ -1,8 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { Storage } from '@capacitor/storage';
+import { INTRO_KEY } from '@guards/intro.guard';
 import { IonSlides } from '@ionic/angular';
-import { INTRO_KEY } from '../../guards/intro.guard';
 
 @Component({
   selector: 'app-intro',
